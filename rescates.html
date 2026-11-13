@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Listado de animales rescatados y disponibles para adopción">
+    <title>Lista de Rescates | Control de Rescate y Adopción</title>
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Control de Rescate y Adopción Animal</h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reportar.html">Reportar Rescate</a></li>
+                <li><a href="rescates.html">Lista de Rescates y Adopciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="titulo-tabla">
+            <h2 id="titulo-tabla">Registro General de Rescates y Estado de Adopción</h2>
+            <p>A continuación se detallan los últimos casos ingresados al sistema y su situación actual.</p>
+
+            <table border="1">
+                <caption>Historial de casos atendidos en el sistema</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Nombre / Alias</th>
+                        <th scope="col">Especie</th>
+                        <th scope="col">Fecha de Rescate</th>
+                        <th scope="col">Zona</th>
+                        <th scope="col">Estado Actual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RES-001</td>
+                        <td>Max</td>
+                        <td>Canino</td>
+                        <td><time datetime="2026-10-15">15/10/2026</time></td>
+                        <td>Sector Norte</td>
+                        <td>Disponible para adopción</td>
+                    </tr>
+                    <tr>
+                        <td>RES-002</td>
+                        <td>Luna</td>
+                        <td>Felino</td>
+                        <td><time datetime="2026-10-22">22/10/2026</time></td>
+                        <td>Centro Histórico</td>
+                        <td>En tratamiento veterinario</td>
+                    </tr>
+                    <tr>
+                        <td>RES-003</td>
+                        <td>Toby</td>
+                        <td>Canino</td>
+                        <td><time datetime="2026-11-01">01/11/2026</time></td>
+                        <td>Av. Principal</td>
+                        <td>Adoptado</td>
+                    </tr>
+                    <tr>
+                        <td>RES-004</td>
+                        <td>Nala</td>
+                        <td>Felino</td>
+                        <td><time datetime="2026-11-08">08/11/2026</time></td>
+                        <td>Parque Central</td>
+                        <td>Disponible para adopción</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6">Total de registros mostrados: 4 casos activos en el historial reciente.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section aria-labelledby="titulo-requisitos">
+            <h2 id="titulo-requisitos">Requisitos para Adoptar</h2>
+            <ol>
+                <li>Ser mayor de edad y presentar documento de identidad.</li>
+                <li>Contar con un espacio seguro y adecuado para la mascota.</li>
+                <li>Comprometerse al seguimiento veterinario y esterilización.</li>
+            </ol>
+            <p>Si deseas iniciar un proceso, contáctanos o <a href="reportar.html">registra un nuevo reporte aquí</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sistema de Control de Rescate y Adopción. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
