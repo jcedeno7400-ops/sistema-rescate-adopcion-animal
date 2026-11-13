@@ -8,9 +8,9 @@
     <title>Reportar Rescate | Control de Rescate y Adopción</title>
 </head>
 <body>
-
     <header>
-        <h1>Sistema de Control de Rescate y Adopción Animal</h1>
+    <img src="assets/img/imgen1.jpg" alt="Logo del Sistema de Rescate Animal" width="320" height="175">
+    <h1>Sistema de Control de Rescate y Adopción Animal</h1>
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -19,88 +19,81 @@
             </ul>
         </nav>
     </header>
-
     <main>
         <section aria-labelledby="titulo-formulario">
             <h2 id="titulo-formulario">Formulario de Reporte de Rescate</h2>
             <p>Complete todos los campos obligatorios marcados con asterisco (*) para activar el protocolo de rescate.</p>
-
-            <form action="rescates.html" method="get">
-                <fieldset>
-                    <legend>Datos del Reportante</legend>
-
+            <article>
+                <h3>Registro de Nuevo Caso</h3>
+                <form action="rescates.html" method="get">
+                    <fieldset>
+                        <legend>Datos del Reportante</legend>
+                        <p>
+                            <label for="nombre-reportante">Nombre completo (*):</label><br>
+                            <input type="text" id="nombre-reportante" name="nombre_reportante" required minlength="3" maxlength="80" placeholder="Ej. María Pérez">
+                        </p>
+                        <p>
+                            <label for="telefono-reportante">Teléfono de contacto (*):</label><br>
+                            <input type="tel" id="telefono-reportante" name="telefono_reportante" required pattern="[0-9]{10}" title="Ingrese un número de 10 dígitos" placeholder="Ej. 0991234567">
+                        </p>
+                        <p>
+                            <label for="correo-reportante">Correo electrónico (*):</label><br>
+                            <input type="email" id="correo-reportante" name="correo_reportante" required placeholder="usuario@dominio.com">
+                        </p>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Información del Animal Rescatado</legend>
+                        <p>
+                            <label for="titulo-caso">Título del caso o nombre provisional (*):</label><br>
+                            <input type="text" id="titulo-caso" name="titulo_caso" required minlength="3" maxlength="100" placeholder="Ej. Cachorro rescatado en Av. Universitaria / Firulais">
+                        </p>
+                        <p>
+                            <label for="categoria">Categoría (*):</label><br>
+                            <select id="categoria" name="categoria" required>
+                                <option value="">-- Seleccione una categoría --</option>
+                                <option value="Perros">Perros</option>
+                                <option value="Gatos">Gatos</option>
+                                <option value="Fauna Silvestre">Fauna Silvestre</option>
+                            </select>
+                        </p>
+                        <fieldset>
+                            <legend>Nivel de urgencia médica (*):</legend>
+                            <p>
+                                <input type="radio" id="urgencia-alta" name="urgencia" value="Alta" required>
+                                <label for="urgencia-alta">Alta (Riesgo vital, atropello o hemorragia)</label><br>
+                                <input type="radio" id="urgencia-media" name="urgencia" value="Media">
+                                <label for="urgencia-media">Media (Heridas leves, desnutrición o cojera)</label><br>
+                                <input type="radio" id="urgencia-baja" name="urgencia" value="Baja">
+                                <label for="urgencia-baja">Baja (Animal sano en situación de abandono)</label>
+                            </p>
+                        </fieldset>
+                        <p>
+                            <label for="fecha-avistamiento">Fecha del avistamiento (*):</label><br>
+                            <input type="date" id="fecha-avistamiento" name="fecha_avistamiento" required>
+                        </p>
+                        <p>
+                            <label for="ubicacion">Dirección o referencia exacta (*):</label><br>
+                            <input type="text" id="ubicacion" name="ubicacion" required minlength="5" maxlength="150" placeholder="Calle principal, intersección y referencia">
+                        </p>
+                        <p>
+                            <label for="descripcion">Descripción detallada del estado en que se encontró (*):</label><br>
+                            <textarea id="descripcion" name="descripcion" rows="4" cols="45" required minlength="10" placeholder="Describa lesiones visibles, comportamiento, color y tamaño aproximado..."></textarea>
+                        </p>
+                    </fieldset>
                     <p>
-                        <label for="nombre-reportante">Nombre completo (*):</label><br>
-                        <input type="text" id="nombre-reportante" name="nombre_reportante" required minlength="3" maxlength="80" placeholder="Ej. María Pérez">
+                        <input type="checkbox" id="confirmacion" name="confirmacion" required>
+                        <label for="confirmacion">Confirmo que la información proporcionada es verídica (*).</label>
                     </p>
-
                     <p>
-                        <label for="telefono-reportante">Teléfono de contacto (*):</label><br>
-                        <input type="tel" id="telefono-reportante" name="telefono_reportante" required pattern="[0-9]{10}" title="Ingrese un número de 10 dígitos" placeholder="Ej. 0991234567">
+                        <button type="submit">Enviar Reporte</button>
+                        <button type="reset">Limpiar Formulario</button>
                     </p>
-
-                    <p>
-                        <label for="correo-reportante">Correo electrónico (*):</label><br>
-                        <input type="email" id="correo-reportante" name="correo_reportante" required placeholder="usuario@dominio.com">
-                    </p>
-                </fieldset>
-
-                <fieldset>
-                    <legend>Información del Animal</legend>
-
-                    <p>
-                        <label for="especie">Especie (*):</label><br>
-                        <select id="especie" name="especie" required>
-                            <option value="">-- Seleccione una opción --</option>
-                            <option value="canino">Canino (Perro)</option>
-                            <option value="felino">Felino (Gato)</option>
-                            <option value="ave">Ave</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="estado-salud">Estado aparente de salud (*):</label><br>
-                        <select id="estado-salud" name="estado_salud" required>
-                            <option value="">-- Seleccione el estado --</option>
-                            <option value="critico">Crítico (Herido / Atropellado)</option>
-                            <option value="desnutrido">Desnutrición o enfermedad leve</option>
-                            <option value="sano">Aparentemente sano (Abandonado)</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label for="fecha-avistamiento">Fecha del avistamiento (*):</label><br>
-                        <input type="date" id="fecha-avistamiento" name="fecha_avistamiento" required>
-                    </p>
-
-                    <p>
-                        <label for="ubicacion">Dirección o referencia exacta (*):</label><br>
-                        <input type="text" id="ubicacion" name="ubicacion" required minlength="5" maxlength="150" placeholder="Calle principal, intersección y referencia">
-                    </p>
-
-                    <p>
-                        <label for="descripcion">Descripción física y observaciones (*):</label><br>
-                        <textarea id="descripcion" name="descripcion" rows="4" cols="40" required minlength="10" placeholder="Color, tamaño aproximado, comportamiento..."></textarea>
-                    </p>
-                </fieldset>
-
-                <p>
-                    <input type="checkbox" id="confirmacion" name="confirmacion" required>
-                    <label for="confirmacion">Confirmo que la información proporcionada es verídica (*).</label>
-                </p>
-
-                <p>
-                    <button type="submit">Enviar Reporte</button>
-                    <button type="reset">Limpiar Formulario</button>
-                </p>
-            </form>
+                </form>
+            </article>
         </section>
     </main>
-
     <footer>
         <p>&copy; 2026 Sistema de Control de Rescate y Adopción. Todos los derechos reservados.</p>
     </footer>
-
 </body>
 </html>
